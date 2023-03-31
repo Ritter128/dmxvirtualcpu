@@ -57,8 +57,6 @@ static BYTE register_a;
 static BYTE register_b;
 static BYTE register_c;
 static BYTE register_d;
-static WORD register_e;
-static WORD register_f;
 
 enum {
   ic = 0x9,

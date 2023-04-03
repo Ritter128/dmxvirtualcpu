@@ -21,18 +21,18 @@ Each macro is one byte long.
 
 Example:
 
-                BYTE memory[1024] = {
-                        mvi, a, 0x05,
-                        mvi, b, 0x05,
-                        push, a,
-                        mvi, a, 0x88,
-                        pop, d,
+        BYTE memory[1024] = {
+                mvi, a, 0x05,
+                mvi, b, 0x05,
+                push, a,
+                mvi, a, 0x88,
+                pop, d,
 
-                // end command. Not crucial, but handy since it puts less stress on the interpeter to not have to read all 1024 bytes!
-                        0xff, 
-                };
-  
-                read_instructions(memory, &instruction_counter);
+        // end command. Not crucial, but handy since it puts less stress on the interpeter to not have to read all 1024 bytes!
+                0xff, 
+        };
+
+        read_instructions(memory, &instruction_counter);
 
 
 # DMX architecture 

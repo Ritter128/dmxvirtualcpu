@@ -28,7 +28,7 @@ Example:
                         mvi, a, 0x88,
                         pop, d,
 
-                        // end command. Not crucial, but handy since it puts less stress on the interpeter to not have to read all 1024 bytes!
+                // end command. Not crucial, but handy since it puts less stress on the interpeter to not have to read all 1024 bytes!
                         0xff, 
                 };
   

@@ -57,6 +57,7 @@ The processor also has different addressing modes for the mov command:
 
 
 The memory is organized like a program, inspired by the structure x86 programs. It is a bit messy:
+
     /*
     -- PROGRAM
       256 bytes

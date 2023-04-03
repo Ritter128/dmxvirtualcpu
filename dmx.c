@@ -14,16 +14,16 @@ static WORD instruction_counter;
 /*
 -- PROGRAM
   256 bytes
--- PROGRAM
+-- ENDPROGRAM
 -- STACK
   16 bytes
--- STACK
+-- ENDSTACK
 -- DATA
   239 bytes
--- DATA
+-- ENDDATA
 -- SYSTEM
   512 bytes
--- SYSTEM
+-- ENDSYSTEM
 */
 
 // I am not going to lie, sections are a mess right now

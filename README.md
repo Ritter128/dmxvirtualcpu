@@ -16,7 +16,7 @@ However, the set differs very little from most assembly languages (e.g. x86, ARM
 This will be a brief overiew to the language.
 
 Macros, that represent opcodes, are used to form instructions.
-The code is written in a BYTE list that is sent to the interpreter.
+The code is written in a byte list that is sent to the interpreter.
 Each macro is one byte long.  
 
 Example:
@@ -36,3 +36,24 @@ Example:
 
 
 # DMX architecture 
+There are alphabetically named four registers: A, B, C, and D.
+They are all one byte in size, can be manipulated by code.  
+
+The processor has a 16 byte stack. "push" and "pop" commands can be used to save registers onto the stack.  
+Example:
+
+    mvi a, 0x44, 
+    push, a,
+    mvi a, 0x77,
+    pop, b,
+
+    0xff
+    // A: 0x77, B: 0x44
+
+The processor also has different addressing modes for the mov command:  
+1. IMMEDIATE; move value into register (mvi, d, 0x23)
+2. DELEGATE; move register value into another register (mvd, a, b)
+3. ACCUMULATE move value from memory into register (mva, a, 0x01, 0x1A)
+
+
+

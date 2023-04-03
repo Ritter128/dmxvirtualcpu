@@ -99,3 +99,7 @@ The memory is organized like a program, inspired by the structure x86 programs. 
       (struct s_Section){0x0200, 0x02, 0x00, 0x0400, 0x04, 0x00},
     };
 
+As you can see, it is similar to the .text and .data sections in other languages. 
+The system section is for preloaded code, which I may use to add extra features in the future. 
+One might be able to make a primitive operating system in the system section.
+Additionally, we have the stack section (discussed above), the dat section for storing larger data, and the program section for code.

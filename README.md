@@ -56,4 +56,45 @@ The processor also has different addressing modes for the mov command:
 3. ACCUMULATE move value from memory into register (mva, a, 0x01, 0x1A)
 
 
+The memory is organized like a program, inspired by the structure x86 programs. It is a bit messy:
+    /*
+    -- PROGRAM
+      256 bytes
+    -- ENDPROGRAM
+    -- STACK
+      16 bytes
+    -- ENDSTACK
+    -- DATA
+      239 bytes
+    -- ENDDATA
+    -- SYSTEM
+      512 bytes
+    -- ENDSYSTEM
+    */
+
+    // I am not going to lie, sections are a mess right now
+
+    struct s_Section {
+      WORD start;
+      BYTE startHighByte;
+      BYTE startLowByte;
+    
+      WORD end;
+      BYTE endHighByte;
+      BYTE endLowByte;
+    };
+    
+    struct s_Disk {
+      struct s_Section PROGRAM_SECT; 
+      struct s_Section STACK_SECT;   
+      struct s_Section DATA_SECT;   
+      struct s_Section SYSTEM_SECT; 
+    };
+    
+    struct s_Disk DISK_FORMAT = {
+      (struct s_Section){0x0000, 0x00, 0x00, 0x00FF, 0x00, 0xFF},
+      (struct s_Section){0x0100, 0x01, 0x00, 0x010F, 0x01, 0x0F},
+      (struct s_Section){0x0110, 0x01, 0x10, 0x01FF, 0x01, 0xFF},
+      (struct s_Section){0x0200, 0x02, 0x00, 0x0400, 0x04, 0x00},
+    };
 

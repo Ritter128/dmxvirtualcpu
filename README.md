@@ -32,7 +32,7 @@ Example:
                         0xff, 
                 };
   
-  read_instructions(memory, &instruction_counter);
+                read_instructions(memory, &instruction_counter);
 
 
 # DMX architecture 

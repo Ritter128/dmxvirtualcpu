@@ -35,7 +35,7 @@ Example:
     read_instructions(memory, &instruction_counter);
 
 
-# DMX architecture 
+# DMX registers
 There are alphabetically named four registers: A, B, C, and D.
 They are all one byte in size, can be manipulated by code.  
 
@@ -55,8 +55,8 @@ The processor also has different addressing modes for the mov command:
 2. DELEGATE; move register value into another register (mvd, a, b)
 3. ACCUMULATE move value from memory into register (mva, a, 0x01, 0x1A)
 
-
-The memory is organized like a program, inspired by the structure x86 programs. It is a bit messy:
+# DMX program format and memory
+The memory is organized like a disk, inspired by the structure x86 programs. It is a bit messy:
 
     /*
     -- PROGRAM

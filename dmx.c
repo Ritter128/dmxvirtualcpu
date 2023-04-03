@@ -446,7 +446,8 @@ int main()
     mvi, a, 0x88,
     pop, d,
 
-    0xff,
+    // end command. Not crucial, but handy since it puts less stress on the interpeter to not have to read all 1024 bytes!
+    0xff, 
   };
   
   read_instructions(memory, &instruction_counter);
